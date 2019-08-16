@@ -1,0 +1,17 @@
+{
+	"name": "ConnLocalFs",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "FileServer",
+		"typeProperties": {
+			"host": "D:\\ADF-Tutorial\\csvfiles",
+			"userId": "vandana",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI2YWI2YjRiZS03NjkxLTQ3MWMtODUzYS00MGRhMTZmODE3OTgiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "DssLocalIR",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

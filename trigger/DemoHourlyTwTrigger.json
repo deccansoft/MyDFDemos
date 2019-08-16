@@ -1,0 +1,29 @@
+{
+	"name": "DemoHourlyTwTrigger",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipeline": {
+			"pipelineReference": {
+				"referenceName": "CopyOnPremToBlob_PL",
+				"type": "PipelineReference"
+			},
+			"parameters": {
+				"StartDt": "@trigger().outputs.windowStartTime"
+			}
+		},
+		"type": "TumblingWindowTrigger",
+		"typeProperties": {
+			"frequency": "Hour",
+			"interval": 1,
+			"startTime": "2019-08-15T11:30:00Z",
+			"endTime": "2019-08-15T17:30:00Z",
+			"delay": "00:00:00",
+			"maxConcurrency": 1,
+			"retryPolicy": {
+				"intervalInSeconds": 30
+			},
+			"dependsOn": []
+		}
+	}
+}

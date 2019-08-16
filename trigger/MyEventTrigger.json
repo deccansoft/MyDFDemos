@@ -1,0 +1,27 @@
+{
+	"name": "MyEventTrigger",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Stopped",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "CopyBlobToSql_PL",
+					"type": "PipelineReference"
+				},
+				"parameters": {
+					"SourceFile": "@triggerBody().fileName"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/csv-files/blobs/",
+			"blobPathEndsWith": ".txt",
+			"scope": "/subscriptions/24784a25-4b3b-4fbe-bd67-045821454fda/resourceGroups/DssDemoRG/providers/Microsoft.Storage/storageAccounts/dssdwdemosa",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}

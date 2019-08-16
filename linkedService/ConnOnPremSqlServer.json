@@ -1,0 +1,17 @@
+{
+	"name": "ConnOnPremSqlServer",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"connectionString": "integrated security=True;data source=DESKTOP-B3B1L45\\INST_2017;initial catalog=AdventureWorks2017",
+			"userName": "vandana",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJlOGI3M2Q0Yy05MjZkLTRkNzgtOThmNC04ZmU0MzYwZjk0NzUiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "DssLocalIR",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

@@ -1,0 +1,6 @@
+{
+	"name": "DssLocalIR",
+	"properties": {
+		"type": "SelfHosted"
+	}
+}

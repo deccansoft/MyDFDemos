@@ -1,0 +1,99 @@
+{
+	"name": "pipeline1",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy Data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobStorageWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "EmpId",
+									"type": "String"
+								},
+								"sink": {
+									"name": "EmpId",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "EmpName",
+									"type": "String"
+								},
+								"sink": {
+									"name": "EmpName",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Salary",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Salary",
+									"type": "String"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "BlobEmpFile",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "Dest_BlobEmpOut",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"parameters": {
+			"StartDt": {
+				"type": "string",
+				"defaultValue": "@trigger().outputs.windowStartTime"
+			}
+		},
+		"annotations": []
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
