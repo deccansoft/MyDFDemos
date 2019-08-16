@@ -1,5 +1,5 @@
 {
-	"name": "CopyBlobToSql_PL",
+	"name": "CopyBlobToSql_P",
 	"properties": {
 		"activities": [
 			{

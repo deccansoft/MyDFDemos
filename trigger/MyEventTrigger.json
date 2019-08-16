@@ -6,7 +6,7 @@
 		"pipelines": [
 			{
 				"pipelineReference": {
-					"referenceName": "CopyBlobToSql_PL",
+					"referenceName": "CopyBlobToSql_P",
 					"type": "PipelineReference"
 				},
 				"parameters": {
